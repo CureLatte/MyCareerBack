@@ -17,3 +17,4 @@
 
 ## DOCS 
 * ### [ERD Diagram](./docs/erd.md)
+* ### [API DOCS](./docs/API.md)
