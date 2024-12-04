@@ -8,7 +8,7 @@ export class ApplyLocalRepository implements ApplyRepository {
 
 	constructor() {}
 
-	async findAllLatestPeriod(): Promise<ApplyPeriod> {
+	async findLatestPeriod(): Promise<ApplyPeriod> {
 		const tempDataBase = { ...this.dataBase };
 
 		const valueList: ApplyPeriod[] = Object.values(tempDataBase);

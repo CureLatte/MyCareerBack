@@ -12,15 +12,6 @@ export class ApplyServiceImpl implements ApplyService {
 	}
 
 	async getLatestApplyPeriod(): Promise<ApplyPeriod> {
-		return new ApplyPeriod({
-			id: 1,
-			status: 'START',
-			startDate: new Date(),
-			endDate: new Date(),
-
-			createdAt: new Date(),
-			updatedAt: new Date(),
-			deletedAt: new Date(),
-		});
+		return this.applyRepository.findLatestPeriod();
 	}
 }
