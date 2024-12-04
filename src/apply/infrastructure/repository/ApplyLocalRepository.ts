@@ -8,6 +8,19 @@ export class ApplyLocalRepository implements ApplyRepository {
 
 	constructor() {}
 
+	async findAllLatestPeriod(): Promise<ApplyPeriod> {
+		const tempDataBase = { ...this.dataBase };
+
+		const valueList: ApplyPeriod[] = Object.values(tempDataBase);
+		if (valueList.length <= 0) {
+			return null;
+		}
+
+		valueList.sort((a, b) => (a.startDate > b.startDate ? 1 : -1));
+
+		return valueList[0];
+	}
+
 	async findById(id: number): Promise<ApplyPeriod> {
 		return this.dataBase[id];
 	}
@@ -25,6 +38,5 @@ export class ApplyLocalRepository implements ApplyRepository {
 	}
 	async deleteAll(): Promise<void> {
 		this.dataBase = {};
-		throw new Error('Method not implemented.');
 	}
 }
