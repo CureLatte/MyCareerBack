@@ -10,4 +10,14 @@ export class ApplyPeriod extends CommonEntity {
 		this.id = data.id;
 		this.status = data.status;
 	}
+
+	public init() {
+		this.status = 'START';
+		this.startDate = new Date();
+	}
+
+	public done(): void {
+		this.status = 'DONE';
+		this.endDate = new Date();
+	}
 }
