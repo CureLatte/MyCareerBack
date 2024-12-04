@@ -1,5 +1,5 @@
 export default class CommonEntity {
-	id: string;
+	id: number;
 	createdAt: Date;
 	updatedAt: Date;
 	deletedAt: Date;

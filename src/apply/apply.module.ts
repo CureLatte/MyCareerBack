@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import ApplyController from './interface/ApplyController';
 import { ApplyServiceImpl } from './domain/service/ApplyServiceImpl';
-import { ApplyRepositoryImpl } from './infrastructure/repository/ApplyRepositoryImpl';
+import { ApplyLocalRepository } from './infrastructure/repository/ApplyLocalRepository';
 import ApplyFacade from './application/ApplyFacade';
 @Module({
 	controllers: [ApplyController],
@@ -13,7 +13,7 @@ import ApplyFacade from './application/ApplyFacade';
 		ApplyFacade,
 		{
 			provide: 'ApplyRepository',
-			useClass: ApplyRepositoryImpl,
+			useClass: ApplyLocalRepository,
 		},
 	],
 
