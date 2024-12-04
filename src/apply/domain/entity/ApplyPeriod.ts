@@ -12,12 +12,27 @@ export class ApplyPeriod extends CommonEntity {
 	}
 
 	public init() {
-		this.status = 'START';
+		this.status = ApplyPeriodStatus.INIT;
 		this.startDate = new Date();
 	}
 
 	public done(): void {
-		this.status = 'DONE';
+		this.status = ApplyPeriodStatus.DONE;
 		this.endDate = new Date();
 	}
+
+	public on() {
+		this.status = ApplyPeriodStatus.ON;
+	}
+
+	public off(): void {
+		this.status = ApplyPeriodStatus.OFF;
+	}
 }
+
+export const ApplyPeriodStatus = {
+	INIT: 'INIT',
+	ON: 'ON',
+	OFF: 'OFF',
+	DONE: 'DONE',
+};

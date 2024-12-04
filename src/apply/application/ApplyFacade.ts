@@ -12,6 +12,10 @@ class ApplyFacade {
 	async getLatestApplyPeriod(): Promise<ApplyPeriod> {
 		return await this.applyService.getLatestApplyPeriod();
 	}
+
+	async startApplyPeriod(): Promise<ApplyPeriod> {
+		return await this.applyService.startApplyPeriod();
+	}
 }
 
 export default ApplyFacade;

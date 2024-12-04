@@ -9,8 +9,9 @@
     const body = {
         status: ok,
         data: {
-          startTime: "2024-01-01",
-          isRunning: true,
+          startDate: "2021-10-10",
+          endDate: undefined,
+          status: "INIT",
         }
     }
     
@@ -64,6 +65,29 @@ const body = {
 }
 
 ```
+
+
+<br>
+
+
+### `GET` /apply/period/start
+> 취업 기간 시작 API
+#### RESPONSE BODY
+```javascript
+const body = {
+  status: true,
+  body: [
+    {
+      startDate: "2021-10-10",
+      endDate: undefined,
+      status: "INIT",
+      
+    }
+  ]
+}
+
+```
+
 <br>
 
 ### `GET` /apply/timeline
