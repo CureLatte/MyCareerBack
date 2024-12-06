@@ -15,7 +15,7 @@ class ApplyController {
 		const period = await this.ApplyFacade.getLatestApplyPeriod();
 		return res.status(200).json({
 			ok: true,
-			data: new ApplyPeriodInfoDto(period),
+			data: period ? new ApplyPeriodInfoDto(period) : null,
 		});
 	}
 
